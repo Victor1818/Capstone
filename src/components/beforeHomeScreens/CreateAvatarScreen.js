@@ -1,21 +1,14 @@
 import React, {Component} from 'react';
 import {View, Button, Text} from 'react-native';
-import AppStart from './AppStartScreen';
 
 export default class CreateAvatar extends Component{
-    
-    
-    
-    
-    
-    
-    render(){
-        return(
-            <View>
-                {/* <Button onPress={AppStart} title='Home'></Button> */}
-                <Text>Create Avatar Screen</Text>
-                <Button ></Button>
+    render() {
+        return (
+            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+                <Button
+                title="Finish"
+                onPress={() => this.props.navigation.navigate('Home')}/>
             </View>
-        )
+        );
     }
 }
