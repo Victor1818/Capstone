@@ -1,13 +1,25 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+import AppStart from './src/components/beforeHomeScreens/AppStartScreen';
+import Login from './src/components/beforeHomeScreens/LoginScreen';
+import SignUp from './src/components/beforeHomeScreens/SignUpScreen';
 
-export default function App() {
+const Stack = createStackNavigator();
+
+export default App = () => {
   return (
-    <View style={styles.container}>
-      <Text>My Capstone</Text>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="AppStart" component={AppStart} options={{title: 'App Start'}}/>
+        <Stack.Screen name="Login" component={Login} options={{title: 'Login'}} />
+        <Stack.Screen name="SignUp" component={SignUp} options={{title: 'Sign Up'}} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
+
 
 const styles = StyleSheet.create({
   container: {
@@ -17,3 +29,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+
+
+
+
+
+
+
+
+
+
