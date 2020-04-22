@@ -1,7 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
-import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
+import { NavigationContainer, NavigationNativeContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
 import AppStart from './src/components/beforeHome/AppStartScreen';
 import Login from './src/components/beforeHome/LoginScreen';
@@ -23,7 +24,9 @@ import EditAccount from './src/components/sideMenu/EditAccountScreen';
 import Help from './src/components/sideMenu/HelpScreen';
 import AboutUs from './src/components/sideMenu/AboutUsScreen';
 
+
 const Stack = createStackNavigator();
+const Drawer = createDrawerNavigator();
 
 export default App = () => {
   return (
@@ -40,35 +43,32 @@ export default App = () => {
         <Stack.Screen name="CardioExercise" component={CardioExercise} options={{title: 'Cardio Exercise'}} />
         <Stack.Screen name="AfterReport" component={AfterReport} options={{title: 'After Report'}} />
         <Stack.Screen name="UpdateAvatar" component={UpdateAvatar} options={{title: 'Update Avatar'}} />
-
-        <Stack.Screen name="Events" component={Events} options={{title: 'Events'}} />
-        <Stack.Screen name="Goals" component={Goals} options={{title: 'Goals'}} />
-        <Stack.Screen name="Stats" component={Stats} options={{title: 'Stats'}} />
-        <Stack.Screen name="Account" component={Account} options={{title: 'Account'}} />
-        <Stack.Screen name="EditAccount" component={EditAccount} options={{title: 'Edit Account'}} />
-        <Stack.Screen name="Help" component={Help} options={{title: 'Help'}} />
-        <Stack.Screen name="AboutUs" component={AboutUs} options={{title: 'About Us'}} />
-
+        
+        <Stack.Screen name="SideBarMenu"  component={SideMenu} />
+        
       </Stack.Navigator>
+      
     </NavigationContainer>
   );
 }
 
+function SideMenu({navigation}){
+  console.log('passes');
+  Drawer.toggleDrawer();
+  console.log('passessssssssssssss');
 
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#7ff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
-
-
-
-
-
+  return(
+    <Drawer.Navigator>
+      <Drawer.Screen name="Events" component={Events} options={{title: 'Events'}} />
+      <Drawer.Screen name="Goals" component={Goals} options={{title: 'Goals'}} />
+      <Drawer.Screen name="Stats" component={Stats} options={{title: 'Stats'}} />
+      <Drawer.Screen name="Account" component={Account} options={{title: 'Account'}} />
+      <Drawer.Screen name="EditAccount" component={EditAccount} options={{title: 'Edit Account'}} />
+      <Drawer.Screen name="Help" component={Help} options={{title: 'Help'}} />
+      <Drawer.Screen name="AboutUs" component={AboutUs} options={{title: 'About Us'}} />
+    </Drawer.Navigator>
+  );
+}
 
 
 

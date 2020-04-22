@@ -5,6 +5,9 @@ export default class Home extends Component{
     render() {
         return (
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+                <Button 
+                title='Side Bar Menu'
+                onPress={() => this.props.navigation.navigate('SideBarMenu')} />
                 <Button
                 title="Stationary Exercise"
                 onPress={() => this.props.navigation.navigate('SelectExercise')}/>
