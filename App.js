@@ -52,7 +52,7 @@ export default App = () => {
   );
 }
 
-function SideMenu({navigation}){
+const SideMenu = (/*{navigation}*/) =>{
   console.log('passes');
   Drawer.toggleDrawer();
   console.log('passessssssssssssss');
