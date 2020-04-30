@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, Button, Image } from 'react-native';
 import { NavigationContainer, NavigationNativeContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
@@ -32,6 +32,8 @@ export default App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+      <Stack.Screen name="CardioExercise" component={CardioExercise} options={{title: 'Cardio Exercise'}} />
+
         <Stack.Screen name="AppStart" component={AppStart} options={{title: 'App Start'}}/>
         <Stack.Screen name="Login" component={Login} options={{title: 'Login'}} />
         <Stack.Screen name="SignUp" component={SignUp} options={{title: 'Sign Up'}} />
@@ -40,7 +42,7 @@ export default App = () => {
         <Stack.Screen name="Home" component={Home} options={{title: 'Home'}} />
         <Stack.Screen name="SelectExercise" component={SelectExercise} options={{title: 'Select Exercise'}} />
         <Stack.Screen name="StationaryExercise" component={StationaryExercise} options={{title: 'Stationary Exercise'}} />
-        <Stack.Screen name="CardioExercise" component={CardioExercise} options={{title: 'Cardio Exercise'}} />
+        {/* <Stack.Screen name="CardioExercise" component={CardioExercise} options={{title: 'Cardio Exercise'}} /> */}
         <Stack.Screen name="AfterReport" component={AfterReport} options={{title: 'After Report'}} />
         <Stack.Screen name="UpdateAvatar" component={UpdateAvatar} options={{title: 'Update Avatar'}} />
         
