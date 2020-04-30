@@ -5,6 +5,7 @@ export default class AppStart extends Component {
     render() {
         return (
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+                <Text>[Insert Title Here]</Text>
                 <Button
                 title="Sign Up"
                 onPress={() => this.props.navigation.navigate('SignUp')}/>

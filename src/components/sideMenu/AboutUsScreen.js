@@ -4,7 +4,13 @@ import {View, Button, Text} from 'react-native';
 export default class AboutUs extends Component{
     render() {
         return (
-            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+            <View>
+                <Text>[Title]</Text>
+                <Text>[Body Text]</Text>
+                <Text>[Title]</Text>
+                <Text>[Body Text]</Text>
+                <Text>[Title]</Text>
+                <Text>[Body Text]</Text>
             </View>
         );
     }

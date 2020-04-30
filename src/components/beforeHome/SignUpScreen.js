@@ -10,9 +10,13 @@ export default class SignUp extends Component{
     render() {
         return (
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+                <Text>First Name: </Text>
                 <TextInput placeholder='First Name' />
+                <Text>Last Name: </Text>
                 <TextInput placeholder='Last Name' />
+                <Text>Email: </Text>
                 <TextInput placeholder='Email' />
+                <Text>Password: </Text>
                 <TextInput placeholder='Password' />
                 <Button
                 title="Sign Up"

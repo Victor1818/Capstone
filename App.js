@@ -32,21 +32,29 @@ export default App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-      <Stack.Screen name="CardioExercise" component={CardioExercise} options={{title: 'Cardio Exercise'}} />
-
+        <Stack.Screen name="Home" component={Home} options={{title: 'Home'}} />
+        
         <Stack.Screen name="AppStart" component={AppStart} options={{title: 'App Start'}}/>
         <Stack.Screen name="Login" component={Login} options={{title: 'Login'}} />
         <Stack.Screen name="SignUp" component={SignUp} options={{title: 'Sign Up'}} />
         <Stack.Screen name="CreateAvatar" component={CreateAvatar} options={{title: 'Create Avatar'}} />
 
-        <Stack.Screen name="Home" component={Home} options={{title: 'Home'}} />
+        {/* <Stack.Screen name="Home" component={Home} options={{title: 'Home'}} /> */}
         <Stack.Screen name="SelectExercise" component={SelectExercise} options={{title: 'Select Exercise'}} />
         <Stack.Screen name="StationaryExercise" component={StationaryExercise} options={{title: 'Stationary Exercise'}} />
-        {/* <Stack.Screen name="CardioExercise" component={CardioExercise} options={{title: 'Cardio Exercise'}} /> */}
+        <Stack.Screen name="CardioExercise" component={CardioExercise} options={{title: 'Cardio Exercise'}} />
         <Stack.Screen name="AfterReport" component={AfterReport} options={{title: 'After Report'}} />
         <Stack.Screen name="UpdateAvatar" component={UpdateAvatar} options={{title: 'Update Avatar'}} />
         
-        <Stack.Screen name="SideBarMenu"  component={SideMenu} />
+        {/* <Stack.Screen name="SideBarMenu"  component={SideMenu} /> */}
+
+        {/* <Stack.Screen name="Events" component={Events} options={{title: 'Events'}} /> */}
+        {/* <Stack.Screen name="Goals" component={Goals} options={{title: 'Goals'}} /> */}
+        {/* <Stack.Screen name="Stats" component={Stats} options={{title: 'Stats'}} /> */}
+        {/* <Stack.Screen name="Account" component={Account} options={{title: 'Account'}} /> */}
+        {/* <Stack.Screen name="EditAccount" component={EditAccount} options={{title: 'Edit Account'}} /> */}
+        {/* <Stack.Screen name="Help" component={Help} options={{title: 'Help'}} /> */}
+        {/* <Stack.Screen name="AboutUs" component={AboutUs} options={{title: 'About Us'}} /> */}
         
       </Stack.Navigator>
       
@@ -54,7 +62,7 @@ export default App = () => {
   );
 }
 
-const SideMenu = (/*{navigation}*/) =>{
+const SideMenu = () =>{
   console.log('passes');
   Drawer.toggleDrawer();
   console.log('passessssssssssssss');
@@ -72,8 +80,13 @@ const SideMenu = (/*{navigation}*/) =>{
   );
 }
 
-
-
+const ScreenHeader = () =>{
+  // let logoRoute = '.\\other\\Images\\icons\\insertImageHere.png';
+  return(
+    // <Text>Help</Text>
+    <Image style={{width: 30, height: 30}} />
+  );
+}
 
 
 

@@ -15,7 +15,9 @@ export default class Login extends Component{
     render() {
         return (
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                <TextInput placeholder='Email' autoCompleteType='email'  />
+                <Text>Email: </Text>
+                <TextInput placeholder='Email' autoCompleteType='email' />
+                <Text>Password: </Text>
                 <TextInput placeholder='Password' autoCompleteType='password' />
                 <Button
                 title="Login"

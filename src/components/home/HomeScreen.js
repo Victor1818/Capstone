@@ -5,9 +5,9 @@ export default class Home extends Component{
     render() {
         return (
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                <Button 
+                {/* <Button 
                 title='Side Bar Menu'
-                onPress={() => this.props.navigation.navigate('SideBarMenu')} />
+                onPress={() => this.props.navigation.navigate('SideBarMenu')} /> */}
                 <Button
                 title="Stationary Exercise"
                 onPress={() => this.props.navigation.navigate('SelectExercise')}/>
@@ -17,6 +17,19 @@ export default class Home extends Component{
                 <Button
                 title="Update Avatar"
                 onPress={() => this.props.navigation.navigate('UpdateAvatar')}/>
+
+                <View style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly'}}>
+                    <Button title='QL1' />
+                    <Text>|</Text>
+                    <Button title='QL2' />
+                    <Text>|</Text>
+                    <Button title='QL3' />
+                    <Text>|</Text>
+                    <Button title='QL4' />
+                    <Text>|</Text>
+                    <Button title='QL5' />
+                </View>
+
             </View>
         );
     }
