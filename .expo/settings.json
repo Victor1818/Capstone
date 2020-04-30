@@ -1,8 +1,8 @@
 {
+  "urlRandomness": "kx-jax",
   "hostType": "lan",
   "lanType": "ip",
   "dev": true,
   "minify": false,
-  "urlRandomness": "5s-icm",
   "https": false
 }

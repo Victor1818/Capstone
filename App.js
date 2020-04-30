@@ -32,14 +32,14 @@ export default App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={Home} options={{title: 'Home'}} />
+        {/* <Stack.Screen name="Home" component={Home} options={{title: 'Home'}} /> */}
         
         <Stack.Screen name="AppStart" component={AppStart} options={{title: 'App Start'}}/>
         <Stack.Screen name="Login" component={Login} options={{title: 'Login'}} />
         <Stack.Screen name="SignUp" component={SignUp} options={{title: 'Sign Up'}} />
         <Stack.Screen name="CreateAvatar" component={CreateAvatar} options={{title: 'Create Avatar'}} />
 
-        {/* <Stack.Screen name="Home" component={Home} options={{title: 'Home'}} /> */}
+        <Stack.Screen name="Home" component={Home} options={{title: 'Home'}} />
         <Stack.Screen name="SelectExercise" component={SelectExercise} options={{title: 'Select Exercise'}} />
         <Stack.Screen name="StationaryExercise" component={StationaryExercise} options={{title: 'Stationary Exercise'}} />
         <Stack.Screen name="CardioExercise" component={CardioExercise} options={{title: 'Cardio Exercise'}} />
@@ -83,8 +83,8 @@ const SideMenu = () =>{
 const ScreenHeader = () =>{
   // let logoRoute = '.\\other\\Images\\icons\\insertImageHere.png';
   return(
-    // <Text>Help</Text>
-    <Image style={{width: 30, height: 30}} />
+    <Text>Help</Text>
+    // <Button onPress={}/>
   );
 }
 

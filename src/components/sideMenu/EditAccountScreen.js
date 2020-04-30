@@ -3,25 +3,56 @@ import {View, Button, Text, TextInput, Image} from 'react-native';
 import UpdateAvatar from '../home/UpdateAvatarScreen';
 
 export default class EditAccount extends Component{
-    update = () =>{
-        this.props.navigation.navigate('Account')
+    constructor(){
+        super();
+        this.state = { firstName: '', lastName: '', email: '', password: '' };
     }
+
+    varify = () =>{
+        let pass = true;
+
+        if(this.state.firstName.length == 0){
+            console.log('First Name Failed');
+            pass = false;
+        }
+        if(this.state.lastName.length == 0){
+            console.log('Last Name Failed');
+            pass = false;
+        }
+        if(this.state.email.length == 0){
+            console.log('Email Failed');
+            pass = false;
+        }
+        if(this.state.password.length == 0){
+            console.log('Password Failed');
+            pass = false;
+        }
+
+        if(pass){
+            console.log('Success');
+            this.props.navigation.navigate('Account');
+        }
+    }
+
+    // update = () =>{
+    //     this.props.navigation.navigate('Account')
+    // }
 
     render() {
         return (
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
                 <Image style={{height: 50, width: 50, backgroundColor: '#aaa'}} />
                 <Text>First Name: </Text>
-                <TextInput placeholder='First Name' />
+                <TextInput placeholder='First Name' value={this.state.firstName} onChangeText={(text) => this.setState({firstName: text})} />
                 <Text>Last Name: </Text>
-                <TextInput placeholder='Last Name' />
+                <TextInput placeholder='Last Name' value={this.state.lastName} onChangeText={(text) => this.setState({lastName: text})} />
                 <Text>Email: </Text>
-                <TextInput placeholder='Email' />
+                <TextInput placeholder='Email' value={this.state.email} onChangeText={(text) => this.setState({email: text})} />
                 <Text>Password: </Text>
-                <TextInput placeholder='Password' />                
+                <TextInput placeholder='Password' value={this.state.password} onChangeText={(text) => this.setState({password: text})} />
                 <Button
-                title="Update"
-                onPress={() => this.update()}/>
+                title="Sign Up"
+                onPress={() => this.varify()}/>
             </View>
         );
     }
