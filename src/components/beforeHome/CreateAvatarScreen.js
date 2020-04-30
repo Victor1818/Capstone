@@ -4,15 +4,14 @@ import {View, Button, Text, Picker, Slider, StyleSheet, Image} from 'react-nativ
 export default class CreateAvatar extends Component{
     constructor(){
         super();
-        this.state = { avatar: '', eyes: 'eyes1', nose: 'nose2', mouth: 'mouth2', color: 'ffffff' };
+        this.state = { avatar: '', eyes: 'eyes1', nose: 'nose2', mouth: 'mouth2', r: 0, g: 0, b: 0 };
     }
-
-
+    
     render() {
         return (
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                <Image source={{uri: `https://api.adorable.io/avatars/face/${this.state.eyes}/${this.state.nose}/${this.state.mouth}/${this.state.color}/200.png`}} style={{height: 200, width: 200, borderRadius: 20}} />
-                <Picker selectedValue={this.state.eyes} style={{ height: 50, width: 150 }} onValueChange={async(itemValue, itemIndex) => {await this.setState({eyes: itemValue});}}>
+                <Image source={{uri: `https://api.adorable.io/avatars/face/${this.state.eyes}/${this.state.nose}/${this.state.mouth}/${this.state.r.toString(16)}${this.state.g.toString(16)}${this.state.b.toString(16)}/200.png`}} style={{height: 200, width: 200, borderRadius: 20}} />
+                <Picker selectedValue={this.state.eyes} style={{ height: 50, width: 150 }} onValueChange={async(itemValue, itemIndex) => {this.setState({ eyes: itemValue });}}>
                     <Picker.Item label='Eyes 1' value='eyes1' />
                     <Picker.Item label='Eyes 2' value='eyes2' />
                     <Picker.Item label='Eyes 3' value='eyes3' />
@@ -24,7 +23,7 @@ export default class CreateAvatar extends Component{
                     <Picker.Item label='Eyes 9' value='eyes9' />
                     <Picker.Item label='Eyes 10' value='eyes10' />
                 </Picker>
-                <Picker selectedValue={this.state.nose} style={{ height: 50, width: 150 }} onValueChange={async(itemValue, itemIndex) => {await this.setState({nose: itemValue});}}>
+                <Picker selectedValue={this.state.nose} style={{ height: 50, width: 150 }} onValueChange={async(itemValue, itemIndex) => {this.setState({ nose: itemValue });}}>
                     <Picker.Item label='Nose 1' value='nose2' />
                     <Picker.Item label='Nose 2' value='nose3' />
                     <Picker.Item label='Nose 3' value='nose4' />
@@ -34,7 +33,7 @@ export default class CreateAvatar extends Component{
                     <Picker.Item label='Nose 7' value='nose8' />
                     <Picker.Item label='Nose 8' value='nose9' />
                 </Picker>
-                <Picker selectedValue={this.state.mouth} style={{ height: 50, width: 150 }} onValueChange={async(itemValue, itemIndex) => {await this.setState({mouth: itemValue});}}>
+                <Picker selectedValue={this.state.mouth} style={{ height: 50, width: 150 }} onValueChange={async(itemValue, itemIndex) => {this.setState({ mouth: itemValue });}}>
                     <Picker.Item label='Mouth 1' value='mouth2' />
                     <Picker.Item label='Mouth 2' value='mouth3' />
                     <Picker.Item label='Mouth 3' value='mouth5' />
@@ -47,20 +46,20 @@ export default class CreateAvatar extends Component{
                 <View style={styles.sliderView}>
                     <Text style={{color: '#f00'}}>R</Text>
                     <Text>0</Text>
-                    <Slider style={styles.slider1} maximumValue={255} step={1}></Slider>
-                    <Text>255</Text>
+                    <Slider style={styles.slider1} minimumValue={0} maximumValue={15} step={1} onValueChange={async(itemValue, itemIndex) => {this.setState({r: itemValue});}}></Slider>
+                    <Text>F</Text>
                 </View>
                 <View style={styles.sliderView}>
                     <Text style={{color: '#0f0'}}>G</Text>
                     <Text>0</Text>
-                    <Slider style={styles.slider1} maximumValue={255} step={1}></Slider>
-                    <Text>255</Text>
+                    <Slider style={styles.slider1} maximumValue={15} step={1} onValueChange={async(itemValue, itemIndex) => {this.setState({g: itemValue});}}></Slider>
+                    <Text>F</Text>
                 </View>
                 <View style={styles.sliderView}>
                     <Text style={{color: '#00f'}}>B</Text>
                     <Text>0</Text>
-                    <Slider style={styles.slider1} maximumValue={255} step={1}></Slider>
-                    <Text>255</Text>
+                    <Slider style={styles.slider1} maximumValue={15} step={1} onValueChange={async(itemValue, itemIndex) => {this.setState({b: itemValue});}}></Slider>
+                    <Text>F</Text>
                 </View>
                 <Button
                 title="Finish"
