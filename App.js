@@ -32,9 +32,9 @@ export default App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        {/* <Stack.Screen name="Home" component={Home} options={{title: 'Home'}} /> */}
+      <Stack.Screen name="AppStart" component={AppStart} options={{headerTitle: props => <ScreenHeader />}}/>
         
-        <Stack.Screen name="AppStart" component={AppStart} options={{title: 'App Start'}}/>
+        {/* <Stack.Screen name="AppStart" component={AppStart} options={{title: 'App Start'}}/> */}
         <Stack.Screen name="Login" component={Login} options={{title: 'Login'}} />
         <Stack.Screen name="SignUp" component={SignUp} options={{title: 'Sign Up'}} />
         <Stack.Screen name="CreateAvatar" component={CreateAvatar} options={{title: 'Create Avatar'}} />
@@ -55,7 +55,7 @@ export default App = () => {
         {/* <Stack.Screen name="EditAccount" component={EditAccount} options={{title: 'Edit Account'}} /> */}
         {/* <Stack.Screen name="Help" component={Help} options={{title: 'Help'}} /> */}
         {/* <Stack.Screen name="AboutUs" component={AboutUs} options={{title: 'About Us'}} /> */}
-        
+        <Drawer.Screen name="Events" component={Events} options={{title: 'Events'}} />
       </Stack.Navigator>
       
     </NavigationContainer>
@@ -63,9 +63,8 @@ export default App = () => {
 }
 
 const SideMenu = () =>{
-  console.log('passes');
-  Drawer.toggleDrawer();
-  console.log('passessssssssssssss');
+  console.log('Check');
+  // Drawer.toggleDrawer();
 
   return(
     <Drawer.Navigator>
@@ -81,10 +80,17 @@ const SideMenu = () =>{
 }
 
 const ScreenHeader = () =>{
-  // let logoRoute = '.\\other\\Images\\icons\\insertImageHere.png';
+  let logoRoute = './other/icons/insertImageHere.png';
+  
+  menu = () =>{
+
+  } 
+
   return(
-    <Text>Help</Text>
-    // <Button onPress={}/>
+    <View>
+      <Text>Help</Text>
+      <Button title={'SM'} onPress={() => SideMenu()}/>
+    </View>
   );
 }
 
