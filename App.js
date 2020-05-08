@@ -58,7 +58,6 @@ export default App = () => {
         {/* <Stack.Screen name="AboutUs" component={AboutUs} options={{title: 'About Us'}} /> */}
         <Drawer.Screen name="Events" component={Events} options={{title: 'Events'}} />
       </Stack.Navigator>
-      
     </NavigationContainer>
   );
 }
@@ -80,21 +79,12 @@ const SideMenu = () =>{
   );
 }
 
-
-
 const ScreenHeader = () =>{
-    
-  menu = () =>{
-
-  } 
-
   return(
     <View>
-      {/* <ImageBackground source={require('./src/icons/hamburgerIcon.png')} style={{width: 40, height: 40}}> */}
-        <TouchableOpacity onPress={() => Drawer.openDrawer()} >
+        <TouchableOpacity onPress={() => console.log('Click!')} >
           <Image source={require('./src/icons/hamburgerIcon.png')} style={{width: 40, height: 40}}/>
         </TouchableOpacity>
-      {/* </ImageBackground> */}
     </View>
   );
 }
