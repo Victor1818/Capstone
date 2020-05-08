@@ -9,7 +9,7 @@ export default class Login extends Component{
 
 
         // this.props.navigation.navigate('Eve')
-        this.props.navigation.navigate(toggleDrawer());
+        this.props.navigation.navigate('Home');
         // this.props.navigation.navigate('Events')
     }
 
