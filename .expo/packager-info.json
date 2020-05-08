@@ -1,9 +1,10 @@
 {
   "devToolsPort": 19002,
-  "expoServerPort": 19000,
-  "packagerPort": 19001,
-  "packagerPid": 15516,
-  "expoServerNgrokUrl": "https://kx-jax.anonymous.capstone.exp.direct",
-  "packagerNgrokUrl": "https://packager.kx-jax.anonymous.capstone.exp.direct",
-  "ngrokPid": 11544
+  "expoServerPort": null,
+  "packagerPort": null,
+  "packagerPid": null,
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null,
+  "webpackServerPort": null
 }

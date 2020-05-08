@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button, Image } from 'react-native';
+import { StyleSheet, Text, View, Button, Image, ImageBackground, TouchableOpacity } from 'react-native';
 import { NavigationContainer, NavigationNativeContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
@@ -29,6 +29,7 @@ const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
 
 export default App = () => {
+  
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -79,17 +80,21 @@ const SideMenu = () =>{
   );
 }
 
+
+
 const ScreenHeader = () =>{
-  let logoRoute = './other/icons/insertImageHere.png';
-  
+    
   menu = () =>{
 
   } 
 
   return(
     <View>
-      <Text>Help</Text>
-      <Button title={'SM'} onPress={() => SideMenu()}/>
+      {/* <ImageBackground source={require('./src/icons/hamburgerIcon.png')} style={{width: 40, height: 40}}> */}
+        <TouchableOpacity onPress={() => Drawer.openDrawer()} >
+          <Image source={require('./src/icons/hamburgerIcon.png')} style={{width: 40, height: 40}}/>
+        </TouchableOpacity>
+      {/* </ImageBackground> */}
     </View>
   );
 }
