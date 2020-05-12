@@ -36,16 +36,16 @@ export default App = () => {
       <Stack.Screen name="AppStart" component={AppStart} options={{headerTitle: props => <ScreenHeader />}}/>
         
         {/* <Stack.Screen name="AppStart" component={AppStart} options={{title: 'App Start'}}/> */}
-        <Stack.Screen name="Login" component={Login} options={{title: 'Login'}} />
-        <Stack.Screen name="SignUp" component={SignUp} options={{title: 'Sign Up'}} />
-        <Stack.Screen name="CreateAvatar" component={CreateAvatar} options={{title: 'Create Avatar'}} />
+        <Stack.Screen name="Login" component={Login} options={{headerTitle: props => <ScreenHeader />}} />
+        <Stack.Screen name="SignUp" component={SignUp} options={{headerTitle: props => <ScreenHeader />}} />
+        <Stack.Screen name="CreateAvatar" component={CreateAvatar} options={{headerTitle: props => <ScreenHeader />}} />
 
-        <Stack.Screen name="Home" component={Home} options={{title: 'Home'}} />
-        <Stack.Screen name="SelectExercise" component={SelectExercise} options={{title: 'Select Exercise'}} />
-        <Stack.Screen name="StationaryExercise" component={StationaryExercise} options={{title: 'Stationary Exercise'}} />
-        <Stack.Screen name="CardioExercise" component={CardioExercise} options={{title: 'Cardio Exercise'}} />
-        <Stack.Screen name="AfterReport" component={AfterReport} options={{title: 'After Report'}} />
-        <Stack.Screen name="UpdateAvatar" component={UpdateAvatar} options={{title: 'Update Avatar'}} />
+        <Stack.Screen name="Home" component={Home} options={{headerTitle: props => <ScreenHeader />}} />
+        <Stack.Screen name="SelectExercise" component={SelectExercise} options={{headerTitle: props => <ScreenHeader />}} />
+        <Stack.Screen name="StationaryExercise" component={StationaryExercise} options={{headerTitle: props => <ScreenHeader />}} />
+        <Stack.Screen name="CardioExercise" component={CardioExercise} options={{headerTitle: props => <ScreenHeader />}} />
+        <Stack.Screen name="AfterReport" component={AfterReport} options={{headerTitle: props => <ScreenHeader />}} />
+        <Stack.Screen name="UpdateAvatar" component={UpdateAvatar} options={{headerTitle: props => <ScreenHeader />}} />
         
         {/* <Stack.Screen name="SideBarMenu"  component={SideMenu} /> */}
 
@@ -81,13 +81,38 @@ const SideMenu = () =>{
 
 const ScreenHeader = () =>{
   return(
-    <View>
-        <TouchableOpacity onPress={() => console.log('Click!')} >
+    <View style={styles.header}>
+        <TouchableOpacity style={styles.hamburger} onPress={() => console.log('Click!')} >
           <Image source={require('./src/icons/hamburgerIcon.png')} style={{width: 40, height: 40}}/>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.logo} onPress={() => console.log('Click!')} >
+          <Image source={require('./src/icons/insertImageHere.png')} style={{width: 40, height: 40}}/>
         </TouchableOpacity>
     </View>
   );
 }
 
+const w = '100%'
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    marginTop: 15,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  header: {
+    display: 'flex',
+    flexDirection: 'row-reverse',
+    justifyContent: 'space-around',
+    alignContent: 'flex-end',
+    width: '100%'
+  },
+  logo: {
+    flex: 2
+  },
+  hamburger: {
+    flex: 1
+  }
+});
 
