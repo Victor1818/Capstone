@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Button, Text, TextInput} from 'react-native';
+import {View, TouchableOpacity, Text, TextInput, StyleSheet} from 'react-native';
 
 export default class SignUp extends Component{
 
@@ -47,10 +47,18 @@ export default class SignUp extends Component{
                 <TextInput placeholder='Email' value={this.state.email} onChangeText={(text) => this.setState({email: text})} />
                 <Text>Password: </Text>
                 <TextInput placeholder='Password' value={this.state.password} onChangeText={(text) => this.setState({password: text})} />
-                <Button
-                title="Sign Up"
-                onPress={() => this.varify()}/>
+                <TouchableOpacity style={styles.button} onPress={() => this.verify()}>
+                    <Text>Sign Up</Text>
+                </TouchableOpacity>
             </View>
         );
     }
 }
+
+const styles = StyleSheet.create({
+    button: {
+        padding: 10,
+        margin: 4,
+        backgroundColor: '#aaa'
+    }
+});

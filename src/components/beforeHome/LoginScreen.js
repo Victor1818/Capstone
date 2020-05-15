@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Button, Text, TextInput} from 'react-native';
+import {View, TouchableOpacity, Text, TextInput, StyleSheet} from 'react-native';
 
 
 export default class Login extends Component{
@@ -20,10 +20,18 @@ export default class Login extends Component{
                 <TextInput placeholder='Email' autoCompleteType='email' />
                 <Text>Password: </Text>
                 <TextInput placeholder='Password' autoCompleteType='password' />
-                <Button
-                title="Login"
-                onPress={() => this.verify()}/>
+                <TouchableOpacity style={styles.button} onPress={() => this.verify()}>
+                    <Text>Login</Text>
+                </TouchableOpacity>
             </View>
         );
     }
 }
+
+const styles = StyleSheet.create({
+    button: {
+        padding: 10,
+        margin: 4,
+        backgroundColor: '#aaa'
+    }
+});

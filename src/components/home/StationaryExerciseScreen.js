@@ -5,9 +5,11 @@ import { Pedometer } from 'expo-sensors';
 
 export default class StationaryExercise extends Component{
 
-    constructor(){
-        super();
-        this.state = {count: 0};
+    
+
+    constructor(props){
+        super(props);
+        this.state = {count: 0, exercise: props.route.params.exercise, speed: props.route.params.speed};
     }
 
     componentDidMount() {
@@ -19,11 +21,11 @@ export default class StationaryExercise extends Component{
     }
 
     _subscribe = () => {
-        this._subscription = Pedometer.watchStepCount(result => {
-        this.setState({
-            currentStepCount: result.steps,
-        });
-        });
+        setTimeout(() => {this._subscription = Pedometer.watchStepCount(result => {
+            this.setState({
+                currentStepCount: result.steps,
+            });
+        })}, this.state.speed);
     };
 
     _unsubscribe = () => {
@@ -31,12 +33,18 @@ export default class StationaryExercise extends Component{
         this._subscription = null;
     };
 
-    render() {
+    render() {     
+        if(this.state.currentStepCount == null || this.state.currentStepCount == 1){
+            var counter = 0;
+        }else{
+            var counter = this.state.currentStepCount - 1
+        }
         return (
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                <Text>[Insert Exercise Name]</Text>
+                <Text>{this.state.exercise}</Text>
                 <Text>[Goal (In Reps)]</Text>
-                <Text>{this.state.currentStepCount}</Text>
+                {/* Put function in text Below*/}
+                <Text>{counter}</Text>
                 <Button
                 title="Finish"
                 onPress={() => this.props.navigation.navigate('AfterReport')}/>

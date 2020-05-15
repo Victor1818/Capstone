@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button, Image, ImageBackground, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Image, TouchableOpacity } from 'react-native';
 import { NavigationContainer, NavigationNativeContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
@@ -92,7 +92,6 @@ const ScreenHeader = () =>{
   );
 }
 
-const w = '100%'
 
 const styles = StyleSheet.create({
   container: {

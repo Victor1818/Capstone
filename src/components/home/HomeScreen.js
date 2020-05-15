@@ -10,10 +10,10 @@ export default class Home extends Component{
                 onPress={() => this.props.navigation.navigate('SideBarMenu')} /> */}
                 <Button
                 title="Stationary Exercise"
-                onPress={() => this.props.navigation.navigate('SelectExercise')}/>
+                onPress={() => this.props.navigation.navigate('SelectExercise', {title: 'Stationary Exercise', category: 'StationaryExercise', exercises: ['Jumping Jacks', 'Squat Jump', "Skaters"]})}/>
                 <Button
                 title="Cardio Exercise"
-                onPress={() => this.props.navigation.navigate('SelectExercise')}/>
+                onPress={() => this.props.navigation.navigate('SelectExercise', {title: 'Cardio Exercise', category: 'CardioExercise', exercises: ['Walking', 'Jogging', 'Cycling']})}/>
                 <Button
                 title="Update Avatar"
                 onPress={() => this.props.navigation.navigate('UpdateAvatar')}/>

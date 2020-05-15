@@ -1,18 +1,26 @@
 import React, { Component } from 'react';
-import { Button, View, Text } from 'react-native';
+import { Button, View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 
 export default class AppStart extends Component {
     render() {
         return (
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
                 <Text>[Insert Title Here]</Text>
-                <Button
-                title="Sign Up"
-                onPress={() => this.props.navigation.navigate('SignUp')}/>
-                <Button
-                title="Login"
-                onPress={() => this.props.navigation.navigate('Login')}/>
+                <TouchableOpacity style={styles.button} onPress={() => this.props.navigation.navigate('SignUp')}>
+                    <Text>Sign Up</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.button} onPress={() => this.props.navigation.navigate('Login')}>
+                    <Text>Login</Text>
+                </TouchableOpacity>
             </View>
         )
     }
 }
+
+const styles = StyleSheet.create({
+    button: {
+        padding: 10,
+        margin: 4,
+        backgroundColor: '#aaa'
+    }
+});
