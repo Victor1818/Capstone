@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Button, Text, Picker, Slider, StyleSheet, Image} from 'react-native';
+import {View, TouchableOpacity, Text, Picker, Slider, StyleSheet, Image} from 'react-native';
 
 export default class UpdateAvatar extends Component{
     constructor(){
@@ -61,9 +61,10 @@ export default class UpdateAvatar extends Component{
                   <Slider style={styles.slider1} maximumValue={15} step={1} onValueChange={async(itemValue, itemIndex) => {this.setState({b: itemValue});}}></Slider>
                   <Text>F</Text>
               </View>
-              <Button
-              title="Finish"
-              onPress={() => this.props.navigation.navigate('Home')}/>
+
+              <TouchableOpacity style={styles.button} onPress={() => this.props.navigation.navigate('Home')}>
+                  <Text>Update</Text>
+              </TouchableOpacity>
           </View>
       );
   }
@@ -144,4 +145,11 @@ container: {
     width: 100,
     color: '#ccc'
   },    
+
+  button: {
+    padding: 10,
+    margin: 4,
+    backgroundColor: '#aaa'
+}
+
 });

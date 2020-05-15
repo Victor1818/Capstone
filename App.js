@@ -11,7 +11,7 @@ import CreateAvatar from './src/components/beforeHome/CreateAvatarScreen';
 
 import Home from './src/components/home/HomeScreen';
 import SelectExercise from './src/components/home/SelectExerciseScreen';
-import StationaryExercise from './src/components/home/StationaryExerciseScreen';
+import FullBodyExercise from './src/components/home/FullBodyExerciseScreen';
 import CardioExercise from './src/components/home/CardioExerciseScreen';
 import AfterReport from './src/components/home/AfterReportScreen';
 import UpdateAvatar from './src/components/home/UpdateAvatarScreen';
@@ -42,7 +42,7 @@ export default App = () => {
 
         <Stack.Screen name="Home" component={Home} options={{headerTitle: props => <ScreenHeader />}} />
         <Stack.Screen name="SelectExercise" component={SelectExercise} options={{headerTitle: props => <ScreenHeader />}} />
-        <Stack.Screen name="StationaryExercise" component={StationaryExercise} options={{headerTitle: props => <ScreenHeader />}} />
+        <Stack.Screen name="FullBodyExercise" component={FullBodyExercise} options={{headerTitle: props => <ScreenHeader />}} />
         <Stack.Screen name="CardioExercise" component={CardioExercise} options={{headerTitle: props => <ScreenHeader />}} />
         <Stack.Screen name="AfterReport" component={AfterReport} options={{headerTitle: props => <ScreenHeader />}} />
         <Stack.Screen name="UpdateAvatar" component={UpdateAvatar} options={{headerTitle: props => <ScreenHeader />}} />

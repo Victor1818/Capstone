@@ -1,36 +1,64 @@
 import React, {Component} from 'react';
-import {View, Button, Text} from 'react-native';
+import {View, Button, TouchableOpacity, Text, Image, StyleSheet} from 'react-native';
 
 export default class Home extends Component{
     render() {
         return (
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                {/* <Button 
-                title='Side Bar Menu'
-                onPress={() => this.props.navigation.navigate('SideBarMenu')} /> */}
-                <Button
-                title="Stationary Exercise"
-                onPress={() => this.props.navigation.navigate('SelectExercise', {title: 'Stationary Exercise', category: 'StationaryExercise', exercises: ['Jumping Jacks', 'Squat Jump', "Skaters"]})}/>
-                <Button
-                title="Cardio Exercise"
-                onPress={() => this.props.navigation.navigate('SelectExercise', {title: 'Cardio Exercise', category: 'CardioExercise', exercises: ['Walking', 'Jogging', 'Cycling']})}/>
-                <Button
-                title="Update Avatar"
-                onPress={() => this.props.navigation.navigate('UpdateAvatar')}/>
+
+                <TouchableOpacity 
+                    style={styles.button} 
+                    onPress={() => this.props.navigation.navigate(
+                        'SelectExercise', 
+                        {title: 'Full Body Exercise', category: 'FullBodyExercise', exercises: ['Jumping Jacks', 'Squat Jump', "Skaters"]})
+                    }>
+                    <Text>Full Body</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity 
+                    style={styles.button} 
+                    onPress={() => this.props.navigation.navigate(
+                        'SelectExercise', 
+                        {title: 'Cardio Exercise', category: 'CardioExercise', exercises: ['Walking', 'Jogging', 'Cycling']})}>
+                    <Text>Cardio</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity style={styles.button} onPress={() => this.props.navigation.navigate('UpdateAvatar')}>
+                    <Text>Update Avatar</Text>
+                </TouchableOpacity>
+
 
                 <View style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly'}}>
-                    <Button title='QL1' />
-                    <Text>|</Text>
-                    <Button title='QL2' />
-                    <Text>|</Text>
-                    <Button title='QL3' />
-                    <Text>|</Text>
-                    <Button title='QL4' />
-                    <Text>|</Text>
-                    <Button title='QL5' />
+                    <TouchableOpacity onPress={() => console.log('Click')}>
+                        <Image source={require('../../icons/homeIcon.png')} style={{width: 40, height: 40}} />
+                    </TouchableOpacity>
+                    
+                    <TouchableOpacity onPress={() => console.log('Click')}>
+                        <Image source={require('../../icons/eventsIcon.png')} style={{width: 40, height: 40}} />
+                    </TouchableOpacity>
+                    
+                    <TouchableOpacity onPress={() => console.log('Click')}>
+                        <Image source={require('../../icons/goalsIcon.png')} style={{width: 40, height: 40}} />
+                    </TouchableOpacity>
+
+                    <TouchableOpacity onPress={() => console.log('Click')}>
+                        <Image source={require('../../icons/statsIcon.png')} style={{width: 40, height: 40}} />
+                    </TouchableOpacity>
+
+                    <TouchableOpacity onPress={() => console.log('Click')}>
+                        <Image source={require('../../icons/accountIcon.png')} style={{width: 40, height: 40}}/>
+                    </TouchableOpacity>
                 </View>
 
             </View>
         );
     }
 }
+
+const styles = StyleSheet.create({
+    button: {
+        padding: 10,
+        margin: 4,
+        backgroundColor: '#aaa'
+    }
+});
