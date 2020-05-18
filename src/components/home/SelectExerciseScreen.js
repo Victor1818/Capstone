@@ -21,7 +21,7 @@ export default class SelectExercise extends Component{
                     <Text>{this.state.exercises[1]}</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.button} onPress={() => this.props.navigation.navigate(`${this.state.category}`, {exercise: this.state.exercises[2], speed: 2210})}>
+                <TouchableOpacity style={styles.button} onPress={() => this.props.navigation.navigate(`${this.state.category}`, {exercise: this.state.exercises[2], speed: 1800})}>
                     <Text>{this.state.exercises[2]}</Text>
                 </TouchableOpacity>
                 

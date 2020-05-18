@@ -34,15 +34,15 @@ export default class Home extends Component{
                     </TouchableOpacity>
                     
                     <TouchableOpacity onPress={() => console.log('Click')}>
-                        <Image source={require('../../icons/eventsIcon.png')} style={{width: 40, height: 40}} />
-                    </TouchableOpacity>
-                    
-                    <TouchableOpacity onPress={() => console.log('Click')}>
                         <Image source={require('../../icons/goalsIcon.png')} style={{width: 40, height: 40}} />
                     </TouchableOpacity>
 
                     <TouchableOpacity onPress={() => console.log('Click')}>
                         <Image source={require('../../icons/statsIcon.png')} style={{width: 40, height: 40}} />
+                    </TouchableOpacity>
+
+                    <TouchableOpacity onPress={() => console.log('Click')}>
+                        <Image source={require('../../icons/eventsIcon.png')} style={{width: 40, height: 40}} />
                     </TouchableOpacity>
 
                     <TouchableOpacity onPress={() => console.log('Click')}>

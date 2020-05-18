@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Button, Text, Image, ImageBackground} from 'react-native';
+import {View, Button, Text, Image, ImageBackground, Platform, ScrollView, TouchableOpacity, StyleSheet} from 'react-native';
 
 export default class CardioExercise extends Component{
 
@@ -18,66 +18,43 @@ export default class CardioExercise extends Component{
         };
       }
 
-      componentDidMount() {
-        this.watchID = navigator.geolocation.watchPosition(
-          position => {
-            const { coordinate, routeCoordinates, distanceTravelled } = this.state;
-            const { latitude, longitude } = position.coords;
-            
-            const newCoordinate = {
-              latitude,
-              longitude
-            };
-            if (Platform.OS === "android") {
-              if (this.marker) {
-                this.marker._component.animateMarkerToCoordinate(
-                  newCoordinate,
-                  500
-                );
-               }
-             } else {
-               coordinate.timing(newCoordinate).start();
-             }
-             this.setState({
-               latitude,
-               longitude,
-               routeCoordinates: routeCoordinates.concat([newCoordinate]),
-               distanceTravelled:
-               distanceTravelled + this.calcDistance(newCoordinate),
-               prevLatLng: newCoordinate
-             });
-           },
-           error => console.log(error),
-           { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 }
-        );
-      }
 
     render() {
         return (
-            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                <Text>[Insert Exercise Name]</Text>
-                <Text>[Goal (In Reps)]</Text>
-                <Image style={{width: 150, height: 150, backgroundColor: '#aaa'}} />
+            <ScrollView>
+                <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+                    <Text>[Insert Exercise Name]</Text>
+                    <Text>[Goal (In Reps)]</Text>
+                    <Image style={{width: 150, height: 150, backgroundColor: '#aaa'}} />
+                    
+                    <Button
+                    title="Finish"
+                    onPress={() => this.props.navigation.navigate('AfterReport')}/>
+                    
+                    <View style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly'}}>
+                        <TouchableOpacity onPress={() => console.log('Click')}>
+                            <Image source={require('../../icons/homeIcon.png')} style={{width: 40, height: 40}} />
+                        </TouchableOpacity>
+                        
+                        <TouchableOpacity onPress={() => console.log('Click')}>
+                            <Image source={require('../../icons/eventsIcon.png')} style={{width: 40, height: 40}} />
+                        </TouchableOpacity>
+                        
+                        <TouchableOpacity onPress={() => console.log('Click')}>
+                            <Image source={require('../../icons/goalsIcon.png')} style={{width: 40, height: 40}} />
+                        </TouchableOpacity>
 
-                <Button
-                title="Finish"
-                onPress={() => this.props.navigation.navigate('AfterReport')}/>
+                        <TouchableOpacity onPress={() => console.log('Click')}>
+                            <Image source={require('../../icons/statsIcon.png')} style={{width: 40, height: 40}} />
+                        </TouchableOpacity>
 
-
-
-                <View style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly'}}>
-                    <Button title='QL1' />
-                    <Text>|</Text>
-                    <Button title='QL2' />
-                    <Text>|</Text>
-                    <Button title='QL3' />
-                    <Text>|</Text>
-                    <Button title='QL4' />
-                    <Text>|</Text>
-                    <Button title='QL5' />
+                        <TouchableOpacity onPress={() => console.log('Click')}>
+                            <Image source={require('../../icons/accountIcon.png')} style={{width: 40, height: 40}}/>
+                        </TouchableOpacity>
+                    </View>
+                
                 </View>
-
-            </View>
+            </ScrollView>
         );
     }
 }
