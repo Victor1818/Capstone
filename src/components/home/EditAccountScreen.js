@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import {View, Button, Text, TextInput, Image} from 'react-native';
-import UpdateAvatar from '../home/UpdateAvatarScreen';
+import {View, TouchableOpacity, Text, TextInput, Image, StyleSheet} from 'react-native';
+import UpdateAvatar from './UpdateAvatarScreen';
 
 export default class EditAccount extends Component{
     constructor(){
@@ -34,10 +34,6 @@ export default class EditAccount extends Component{
         }
     }
 
-    // update = () =>{
-    //     this.props.navigation.navigate('Account')
-    // }
-
     render() {
         return (
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -50,10 +46,18 @@ export default class EditAccount extends Component{
                 <TextInput placeholder='Email' value={this.state.email} onChangeText={(text) => this.setState({email: text})} />
                 <Text>Password: </Text>
                 <TextInput placeholder='Password' value={this.state.password} onChangeText={(text) => this.setState({password: text})} />
-                <Button
-                title="Sign Up"
-                onPress={() => this.varify()}/>
+                <TouchableOpacity style={styles.button} onPress={() => this.props.navigation.navigate('Account')}>
+                    <Text>Update</Text>
+                </TouchableOpacity>
             </View>
         );
     }
 }
+
+const styles = StyleSheet.create({
+    button: {
+        padding: 10,
+        margin: 4,
+        backgroundColor: '#aaa'
+    }
+});

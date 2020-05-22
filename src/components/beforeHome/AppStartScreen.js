@@ -5,7 +5,7 @@ export default class AppStart extends Component {
     render() {
         return (
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                <Text>[Insert Title Here]</Text>
+                <Text>Body Boosters</Text>
                 <TouchableOpacity style={styles.button} onPress={() => this.props.navigation.navigate('SignUp')}>
                     <Text>Sign Up</Text>
                 </TouchableOpacity>

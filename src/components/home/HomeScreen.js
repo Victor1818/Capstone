@@ -29,23 +29,23 @@ export default class Home extends Component{
 
 
                 <View style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly'}}>
-                    <TouchableOpacity onPress={() => console.log('Click')}>
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}>
                         <Image source={require('../../icons/homeIcon.png')} style={{width: 40, height: 40}} />
                     </TouchableOpacity>
                     
-                    <TouchableOpacity onPress={() => console.log('Click')}>
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Goals')}>
                         <Image source={require('../../icons/goalsIcon.png')} style={{width: 40, height: 40}} />
                     </TouchableOpacity>
 
-                    <TouchableOpacity onPress={() => console.log('Click')}>
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Stats')}>
                         <Image source={require('../../icons/statsIcon.png')} style={{width: 40, height: 40}} />
                     </TouchableOpacity>
 
-                    <TouchableOpacity onPress={() => console.log('Click')}>
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Events')}>
                         <Image source={require('../../icons/eventsIcon.png')} style={{width: 40, height: 40}} />
                     </TouchableOpacity>
 
-                    <TouchableOpacity onPress={() => console.log('Click')}>
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Account')}>
                         <Image source={require('../../icons/accountIcon.png')} style={{width: 40, height: 40}}/>
                     </TouchableOpacity>
                 </View>
