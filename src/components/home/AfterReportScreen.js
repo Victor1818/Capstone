@@ -15,25 +15,25 @@ export default class AfterReport extends Component{
 
 
 
-                <View style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly'}}>
-                    <TouchableOpacity onPress={() => console.log('Click')}>
-                        <Image source={require('../../icons/homeIcon.png')} style={{width: 40, height: 40}} />
+                <View style={styles.nav}>
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}>
+                        <Image source={require('../../icons/homeIcon.png')} style={styles.image} />
                     </TouchableOpacity>
                     
-                    <TouchableOpacity onPress={() => console.log('Click')}>
-                        <Image source={require('../../icons/eventsIcon.png')} style={{width: 40, height: 40}} />
-                    </TouchableOpacity>
-                    
-                    <TouchableOpacity onPress={() => console.log('Click')}>
-                        <Image source={require('../../icons/goalsIcon.png')} style={{width: 40, height: 40}} />
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Goals')}>
+                        <Image source={require('../../icons/goalsIcon.png')} style={styles.image} />
                     </TouchableOpacity>
 
-                    <TouchableOpacity onPress={() => console.log('Click')}>
-                        <Image source={require('../../icons/statsIcon.png')} style={{width: 40, height: 40}} />
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Stats')}>
+                        <Image source={require('../../icons/statsIcon.png')} style={styles.image} />
                     </TouchableOpacity>
 
-                    <TouchableOpacity onPress={() => console.log('Click')}>
-                        <Image source={require('../../icons/accountIcon.png')} style={{width: 40, height: 40}}/>
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Events')}>
+                        <Image source={require('../../icons/eventsIcon.png')} style={styles.image} />
+                    </TouchableOpacity>
+
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Account')}>
+                        <Image source={require('../../icons/accountIcon.png')} style={styles.image}/>
                     </TouchableOpacity>
                 </View>
 
@@ -46,6 +46,16 @@ const styles = StyleSheet.create({
     button: {
         padding: 10,
         margin: 4,
-        backgroundColor: '#aaa'
+        backgroundColor: '#aaa',
+        borderRadius: 14
+    },
+    image:{
+        width: 40,
+        height: 40
+    },
+    nav:{
+        display: 'flex', 
+        flexDirection: 'row', 
+        justifyContent: 'space-evenly'
     }
 });

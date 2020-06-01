@@ -8,7 +8,7 @@ export default class SignUp extends Component{
         this.state = { firstName: '', lastName: '', email: '', password: '' };
     }
 
-    varify = () =>{
+    verify = () =>{
         let pass = true;
 
         if(this.state.firstName.length == 0){
@@ -59,6 +59,7 @@ const styles = StyleSheet.create({
     button: {
         padding: 10,
         margin: 4,
-        backgroundColor: '#aaa'
+        backgroundColor: '#aaa',
+        borderRadius: 14
     }
 });

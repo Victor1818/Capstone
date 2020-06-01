@@ -9,7 +9,7 @@ export default class CreateAvatar extends Component{
     
     render() {
         return (
-            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+            <View style={styles.container}>
                 <Image source={{uri: `https://api.adorable.io/avatars/face/${this.state.eyes}/${this.state.nose}/${this.state.mouth}/${this.state.r.toString(16)}${this.state.g.toString(16)}${this.state.b.toString(16)}/200.png`}} style={{height: 200, width: 200, borderRadius: 20}} />
                 <Picker selectedValue={this.state.eyes} style={{ height: 50, width: 150 }} onValueChange={async(itemValue, itemIndex) => {this.setState({ eyes: itemValue });}}>
                     <Picker.Item label='Eyes 1' value='eyes1' />
@@ -70,84 +70,85 @@ export default class CreateAvatar extends Component{
 }
 
 const styles = StyleSheet.create({
-    container: {
-        display: 'flex',
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-      },
-      
-      headerText:{
-        fontSize: 20,
-        textAlign: "center",
-        color: '#f01',
-        padding: 10
-      },
-    
-      header:{
-        color: '#f00',
-        fontFamily: 'serif',
-        fontSize: 30,
-        fontWeight: '800',
-        textAlign: 'center',
-        padding: 20,
-        backgroundColor: '#000'
-      },
-    
-      personalInfo:{
-        padding: 20,
-        backgroundColor: '#095'
-      },
-    
-      skills:{
-        display: 'flex',
-        padding: 20,
-        backgroundColor: '#aaa'
-      },
-    
-      submission:{
-        padding: 20,
-        backgroundColor:'#f01'
-    
-      },
-    
-      pic:{
-        width: 310,
-        height: 100
-      },
-    
-      input:{
-    
-      },
-    
-      sliderView:{
-        flexDirection: 'row',
-        padding: 13
-      },
-      
-      slider1:{
-        flex: 1
-      },
-    
-      slider2:{
-        flex: 1
-    
-      },
-      
-      slider3:{
-        flex: 1
-    
-      },
-    
-      picker:{
-        height: 20,
-        width: 100,
-        color: '#ccc'
-      },
+  container: {
+    flex: 1, 
+    alignItems: 'center', 
+    justifyContent: 'center',
+    backgroundColor: '#087891'
+  },
+  headerText:{
+    fontSize: 20,
+    textAlign: "center",
+    color: '#f01',
+    padding: 10
+  },
 
-      button: {
-        padding: 10,
-        margin: 4,
-        backgroundColor: '#aaa'
-    } 
+  header:{
+    color: '#f00',
+    fontFamily: 'serif',
+    fontSize: 30,
+    fontWeight: '800',
+    textAlign: 'center',
+    padding: 20,
+    backgroundColor: '#000'
+  },
+
+  personalInfo:{
+    padding: 20,
+    backgroundColor: '#095'
+  },
+
+  skills:{
+    display: 'flex',
+    padding: 20,
+    backgroundColor: '#aaa'
+  },
+
+  submission:{
+    padding: 20,
+    backgroundColor:'#f01'
+
+  },
+
+  pic:{
+    width: 310,
+    height: 100
+  },
+
+  input:{
+
+  },
+
+  sliderView:{
+    flexDirection: 'row',
+    padding: 13
+  },
+  
+  slider1:{
+    flex: 1
+  },
+
+  slider2:{
+    flex: 1
+
+  },
+  
+  slider3:{
+    flex: 1
+
+  },
+
+  picker:{
+    height: 20,
+    width: 100,
+    color: '#ccc'
+  },
+
+  button: {
+    padding: 10,
+    margin: 4,
+    backgroundColor: '#aaa',
+    borderRadius: 14
+
+  } 
 });

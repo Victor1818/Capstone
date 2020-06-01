@@ -30,33 +30,172 @@ export default App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+
       <Stack.Screen 
         name="AppStart" 
         component={AppStart} 
         options={{
           headerTitle: props => <ScreenHeader />, 
           headerStyle: {
-            backgroundColor: '#a3b',
+            backgroundColor: '#043A47',
             height: 75,
           },
         }}/>
-        
-        <Stack.Screen name="Login" component={Login} options={{headerTitle: props => <ScreenHeader />}} />
-        <Stack.Screen name="SignUp" component={SignUp} options={{headerTitle: props => <ScreenHeader />}} />
-        <Stack.Screen name="CreateAvatar" component={CreateAvatar} options={{headerTitle: props => <ScreenHeader />}} />
 
-        <Stack.Screen name="Home" component={Home} options={{headerTitle: props => <ScreenHeader />}} />
-        <Stack.Screen name="SelectExercise" component={SelectExercise} options={{headerTitle: props => <ScreenHeader />}} />
-        <Stack.Screen name="FullBodyExercise" component={FullBodyExercise} options={{headerTitle: props => <ScreenHeader />}} />
-        <Stack.Screen name="CardioExercise" component={CardioExercise} options={{headerTitle: props => <ScreenHeader />}} />
-        <Stack.Screen name="AfterReport" component={AfterReport} options={{headerTitle: props => <ScreenHeader />}} />
-        <Stack.Screen name="UpdateAvatar" component={UpdateAvatar} options={{headerTitle: props => <ScreenHeader />}} />
+        <Stack.Screen 
+          name="Login" 
+          component={Login} 
+          options={{
+            headerTitle: props => <ScreenHeader />,
+            headerStyle: {
+              backgroundColor: '#043A47',
+              height: 75,
+            }
+        }}/>
         
-        <Stack.Screen name="Events" component={Events} options={{title: 'Events'}} /> 
-        <Stack.Screen name="Goals" component={Goals} options={{title: 'Goals'}} />
-        <Stack.Screen name="Stats" component={Stats} options={{title: 'Stats'}} />
-        <Stack.Screen name="Account" component={Account} options={{title: 'Account'}} />
-        <Stack.Screen name="EditAccount" component={EditAccount} options={{title: 'Edit Account'}} />
+        <Stack.Screen 
+          name="SignUp" 
+          component={SignUp} 
+          options={{
+            headerTitle: props => <ScreenHeader />,
+            headerStyle: {
+              backgroundColor: '#043A47',
+              height: 75,
+            }
+          }}/>
+        
+        <Stack.Screen 
+          name="CreateAvatar" 
+          component={CreateAvatar} 
+          options={{
+            headerTitle: props => <ScreenHeader />,
+            headerStyle: {
+              backgroundColor: '#043A47',
+              height: 75,
+            }
+          }}/>
+
+
+
+        <Stack.Screen 
+          name="Home" 
+          component={Home} 
+          options={{
+            headerTitle: props => <ScreenHeader />,
+            headerStyle: {
+              backgroundColor: '#043A47',
+              height: 75,
+            }
+          }}/>
+
+        <Stack.Screen 
+          name="SelectExercise" 
+          component={SelectExercise} 
+          options={{
+            headerTitle: props => <ScreenHeader />,
+            headerStyle: {
+              backgroundColor: '#043A47',
+              height: 75,
+            }
+          }}/>
+        
+        <Stack.Screen 
+          name="FullBodyExercise" 
+          component={FullBodyExercise} 
+          options={{
+            headerTitle: props => <ScreenHeader />,
+            headerStyle: {
+              backgroundColor: '#043A47',
+              height: 75,
+            }
+          }}/>
+        
+        <Stack.Screen 
+          name="CardioExercise" 
+          component={CardioExercise} 
+          options={{
+            headerTitle: props => <ScreenHeader />,
+            headerStyle: {
+              backgroundColor: '#043A47',
+              height: 75,
+            }
+          }}/>
+        
+        <Stack.Screen 
+          name="AfterReport" 
+          component={AfterReport} 
+          options={{
+            headerTitle: props => <ScreenHeader />,
+            headerStyle: {
+              backgroundColor: '#043A47',
+              height: 75,
+            }
+          }}/>
+        
+        <Stack.Screen 
+          name="UpdateAvatar" 
+          component={UpdateAvatar} 
+          options={{
+            headerTitle: props => <ScreenHeader />,
+            headerStyle: {
+              backgroundColor: '#043A47',
+              height: 75,
+            }
+          }}/>
+        
+
+
+        <Stack.Screen 
+          name="Events" 
+          component={Events} 
+          options={{
+            headerTitle: props => <ScreenHeader />,
+            headerStyle: {
+              backgroundColor: '#043A47',
+              height: 75,
+            }
+          }}/>
+        
+        <Stack.Screen 
+          name="Goals" 
+          component={Goals} options={{
+            headerTitle: props => <ScreenHeader />,
+            headerStyle: {
+              backgroundColor: '#043A47',
+              height: 75,
+            }
+          }}/>
+        
+        <Stack.Screen 
+          name="Stats" 
+          component={Stats} options={{
+            headerTitle: props => <ScreenHeader />,
+            headerStyle: {
+              backgroundColor: '#043A47',
+              height: 75,
+            }
+          }}/>
+        
+        <Stack.Screen 
+          name="Account" 
+          component={Account} options={{
+            headerTitle: props => <ScreenHeader />,
+            headerStyle: {
+              backgroundColor: '#043A47',
+              height: 75,
+            }
+          }}/>
+        
+        <Stack.Screen 
+          name="EditAccount" 
+          component={EditAccount} options={{
+            headerTitle: props => <ScreenHeader />,
+            headerStyle: {
+              backgroundColor: '#043A47',
+              height: 75,
+            }
+          }}/>
+
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -71,7 +71,7 @@ export default class UpdateAvatar extends Component{
 }
 
 const styles = StyleSheet.create({
-container: {
+  container: {
     display: 'flex',
     backgroundColor: '#fff',
     alignItems: 'center',
@@ -149,7 +149,8 @@ container: {
   button: {
     padding: 10,
     margin: 4,
-    backgroundColor: '#aaa'
-}
+    backgroundColor: '#aaa',
+    borderRadius: 14
+  }
 
 });

@@ -1,25 +1,28 @@
 import React, {Component} from 'react';
 import {View, Button, Text, Image, ImageBackground, Platform, ScrollView, TouchableOpacity, StyleSheet} from 'react-native';
+import Geolocation from '@react-native-community/geolocation';
+
 
 export default class CardioExercise extends Component{
 
-    constructor(props) {
-        super(props);
-        this.state = {
-          latitude: LATITUDE,
-          longitude: LONGITUDE,
-          routeCoordinates: [],
-          distanceTravelled: 0,
-          prevLatLng: {},
-          coordinate: new AnimatedRegion({
-           latitude: LATITUDE,
-           longitude: LONGITUDE
-          })
-        };
-      }
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //       latitude: LATITUDE,
+    //       longitude: LONGITUDE,
+    //       routeCoordinates: [],
+    //       distanceTravelled: 0,
+    //       prevLatLng: {},
+    //       coordinate: new AnimatedRegion({
+    //        latitude: LATITUDE,
+    //        longitude: LONGITUDE
+    //       })
+    //     };
+    //   }
 
 
     render() {
+        console.log(Geolocation.getCurrentPosition())
         return (
             <ScrollView>
                 <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
