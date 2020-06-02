@@ -32,6 +32,17 @@ export default App = () => {
       <Stack.Navigator>
 
       <Stack.Screen 
+          name="Home" 
+          component={Home} 
+          options={{
+            headerTitle: props => <ScreenHeader />,
+            headerStyle: {
+              backgroundColor: '#043A47',
+              height: 75,
+            }
+          }}/>
+
+      <Stack.Screen 
         name="AppStart" 
         component={AppStart} 
         options={{
@@ -77,7 +88,7 @@ export default App = () => {
 
 
 
-        <Stack.Screen 
+        {/* <Stack.Screen 
           name="Home" 
           component={Home} 
           options={{
@@ -86,7 +97,7 @@ export default App = () => {
               backgroundColor: '#043A47',
               height: 75,
             }
-          }}/>
+          }}/> */}
 
         <Stack.Screen 
           name="SelectExercise" 
