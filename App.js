@@ -31,25 +31,16 @@ export default App = () => {
     <NavigationContainer>
       <Stack.Navigator>
 
-      <Stack.Screen 
-          name="Home" 
-          component={Home} 
-          options={{
-            headerTitle: props => <ScreenHeader />,
-            headerStyle: {
-              backgroundColor: '#043A47',
-              height: 75,
-            }
-          }}/>
+      
 
       <Stack.Screen 
         name="AppStart" 
         component={AppStart} 
         options={{
-          headerTitle: props => <ScreenHeader />, 
+          headerTitle: props => <ScreenHeaderStart />, 
           headerStyle: {
-            backgroundColor: '#043A47',
-            height: 75,
+            backgroundColor: '#A7F205',
+            height: 0,
           },
         }}/>
 
@@ -59,7 +50,7 @@ export default App = () => {
           options={{
             headerTitle: props => <ScreenHeader />,
             headerStyle: {
-              backgroundColor: '#043A47',
+              backgroundColor: '#A7F205',
               height: 75,
             }
         }}/>
@@ -70,7 +61,7 @@ export default App = () => {
           options={{
             headerTitle: props => <ScreenHeader />,
             headerStyle: {
-              backgroundColor: '#043A47',
+              backgroundColor: '#A7F205',
               height: 75,
             }
           }}/>
@@ -81,23 +72,23 @@ export default App = () => {
           options={{
             headerTitle: props => <ScreenHeader />,
             headerStyle: {
-              backgroundColor: '#043A47',
+              backgroundColor: '#A7F205',
               height: 75,
             }
           }}/>
 
 
 
-        {/* <Stack.Screen 
+        <Stack.Screen 
           name="Home" 
           component={Home} 
           options={{
             headerTitle: props => <ScreenHeader />,
             headerStyle: {
-              backgroundColor: '#043A47',
+              backgroundColor: '#A7F205',
               height: 75,
             }
-          }}/> */}
+          }}/>
 
         <Stack.Screen 
           name="SelectExercise" 
@@ -105,7 +96,7 @@ export default App = () => {
           options={{
             headerTitle: props => <ScreenHeader />,
             headerStyle: {
-              backgroundColor: '#043A47',
+              backgroundColor: '#A7F205',
               height: 75,
             }
           }}/>
@@ -116,7 +107,7 @@ export default App = () => {
           options={{
             headerTitle: props => <ScreenHeader />,
             headerStyle: {
-              backgroundColor: '#043A47',
+              backgroundColor: '#A7F205',
               height: 75,
             }
           }}/>
@@ -127,7 +118,7 @@ export default App = () => {
           options={{
             headerTitle: props => <ScreenHeader />,
             headerStyle: {
-              backgroundColor: '#043A47',
+              backgroundColor: '#A7F205',
               height: 75,
             }
           }}/>
@@ -138,7 +129,7 @@ export default App = () => {
           options={{
             headerTitle: props => <ScreenHeader />,
             headerStyle: {
-              backgroundColor: '#043A47',
+              backgroundColor: '#A7F205',
               height: 75,
             }
           }}/>
@@ -149,7 +140,7 @@ export default App = () => {
           options={{
             headerTitle: props => <ScreenHeader />,
             headerStyle: {
-              backgroundColor: '#043A47',
+              backgroundColor: '#A7F205',
               height: 75,
             }
           }}/>
@@ -162,7 +153,7 @@ export default App = () => {
           options={{
             headerTitle: props => <ScreenHeader />,
             headerStyle: {
-              backgroundColor: '#043A47',
+              backgroundColor: '#A7F205',
               height: 75,
             }
           }}/>
@@ -172,7 +163,7 @@ export default App = () => {
           component={Goals} options={{
             headerTitle: props => <ScreenHeader />,
             headerStyle: {
-              backgroundColor: '#043A47',
+              backgroundColor: '#A7F205',
               height: 75,
             }
           }}/>
@@ -182,7 +173,7 @@ export default App = () => {
           component={Stats} options={{
             headerTitle: props => <ScreenHeader />,
             headerStyle: {
-              backgroundColor: '#043A47',
+              backgroundColor: '#A7F205',
               height: 75,
             }
           }}/>
@@ -192,7 +183,7 @@ export default App = () => {
           component={Account} options={{
             headerTitle: props => <ScreenHeader />,
             headerStyle: {
-              backgroundColor: '#043A47',
+              backgroundColor: '#A7F205',
               height: 75,
             }
           }}/>
@@ -202,7 +193,7 @@ export default App = () => {
           component={EditAccount} options={{
             headerTitle: props => <ScreenHeader />,
             headerStyle: {
-              backgroundColor: '#043A47',
+              backgroundColor: '#A7F205',
               height: 75,
             }
           }}/>
@@ -215,13 +206,20 @@ export default App = () => {
 const ScreenHeader = () =>{
   return(
     <View style={styles.header}>
-        <TouchableOpacity style={styles.logo} onPress={() => console.log('Click!')} >
-          <Image source={require('./src/icons/insertImageHere.png')} style={{width: 40, height: 40}}/>
+        <TouchableOpacity style={styles.logoContainer} >
+          <Image source={require('./src/icons/logo.png')} style={styles.logo}/>
         </TouchableOpacity>
     </View>
   );
 }
 
+const ScreenHeaderStart = () =>{
+  return(
+    <View style={styles.header}>
+        
+    </View>
+  );
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -231,10 +229,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   header: {
-
   },
   logo: {
-
+    width: 61,
+    height: 40
   },
 });
 

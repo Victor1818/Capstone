@@ -45,24 +45,24 @@ export default class CreateAvatar extends Component{
                 </Picker>
                 <View style={styles.sliderView}>
                     <Text style={{color: '#f00'}}>R</Text>
-                    <Text>0</Text>
+                    <Text style={styles.text}>0</Text>
                     <Slider style={styles.slider1} minimumValue={0} maximumValue={15} step={1} onValueChange={async(itemValue, itemIndex) => {this.setState({r: itemValue});}}></Slider>
-                    <Text>F</Text>
+                    <Text style={styles.text}>F</Text>
                 </View>
                 <View style={styles.sliderView}>
                     <Text style={{color: '#0f0'}}>G</Text>
-                    <Text>0</Text>
+                    <Text style={styles.text}>0</Text>
                     <Slider style={styles.slider1} maximumValue={15} step={1} onValueChange={async(itemValue, itemIndex) => {this.setState({g: itemValue});}}></Slider>
-                    <Text>F</Text>
+                    <Text style={styles.text}>F</Text>
                 </View>
                 <View style={styles.sliderView}>
                     <Text style={{color: '#00f'}}>B</Text>
-                    <Text>0</Text>
+                    <Text style={styles.text}>0</Text>
                     <Slider style={styles.slider1} maximumValue={15} step={1} onValueChange={async(itemValue, itemIndex) => {this.setState({b: itemValue});}}></Slider>
-                    <Text>F</Text>
+                    <Text style={styles.text}>F</Text>
                 </View>
                 <TouchableOpacity style={styles.button} onPress={() => this.props.navigation.navigate('Home')}>
-                  <Text>Finish</Text>
+                  <Text style={styles.nextButton}>Finish</Text>
                 </TouchableOpacity>
             </View>
         );
@@ -74,7 +74,8 @@ const styles = StyleSheet.create({
     flex: 1, 
     alignItems: 'center', 
     justifyContent: 'center',
-    backgroundColor: '#087891'
+    backgroundColor: '#310273',
+    
   },
   headerText:{
     fontSize: 20,
@@ -147,8 +148,18 @@ const styles = StyleSheet.create({
   button: {
     padding: 10,
     margin: 4,
-    backgroundColor: '#aaa',
-    borderRadius: 14
+    backgroundColor: '#A7F205',
+    borderRadius: 14,
+    height: '11%',
+    width: '40%',
 
-  } 
+  },
+  text:{
+    color: '#f2f2f2',
+  },
+  nextButton:{
+    color: '#310273', 
+    fontSize: 30, 
+    textAlign: 'center', 
+}
 });

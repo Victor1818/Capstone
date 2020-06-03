@@ -15,13 +15,18 @@ export default class Login extends Component{
 
     render() {
         return (
-            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                <Text>Email: </Text>
-                <TextInput placeholder='Email' autoCompleteType='email' />
-                <Text>Password: </Text>
-                <TextInput placeholder='Password' autoCompleteType='password' />
+            <View style={styles.container}>
+
+                <View style={styles.form}>
+                    <Text style={styles.text}>Email: </Text>
+                    <TextInput style={styles.text} placeholder='Email' autoCompleteType='email' />
+                </View>    
+                <View style={styles.form}>
+                    <Text style={styles.text}>Password: </Text>
+                    <TextInput style={styles.text} placeholder='Password' autoCompleteType='password' />
+                </View>    
                 <TouchableOpacity style={styles.button} onPress={() => this.verify()}>
-                    <Text>Login</Text>
+                    <Text style={styles.nextButton}>Login</Text>
                 </TouchableOpacity>
             </View>
         );
@@ -29,13 +34,32 @@ export default class Login extends Component{
 }
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1, 
+        alignItems: 'center', 
+        justifyContent: 'center',
+        backgroundColor: '#310273',
+        flexDirection: 'column',
+    },
     button: {
         padding: 10,
         margin: 4,
-        backgroundColor: '#aaa',
-        borderRadius: 14
+        backgroundColor: '#A7F205',
+        borderRadius: 14,
+        height: '11%',
+        width: '40%',
+    },
+    form:{
+        flexDirection: 'row'
     },
     text:{
-        color: '#C8C8C8'
-    },
+        color: '#f2f2f2',
+        fontSize: 20,
+        paddingVertical: 10
+    }, 
+    nextButton:{
+        color: '#310273', 
+        fontSize: 30, 
+        textAlign: 'center', 
+    }
 });

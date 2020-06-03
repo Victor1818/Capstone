@@ -45,6 +45,7 @@ export default class FullBodyExercise extends Component{
                 <Text>[Goal (In Reps)]</Text>
                 {/* Put function in text Below*/}
                 <Text>{counter}</Text>
+                <Text>3</Text>
 
                 <TouchableOpacity style={styles.button} onPress={() => this.props.navigation.navigate('AfterReport')}>
                     <Text>Finish</Text>
