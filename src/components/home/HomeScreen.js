@@ -73,8 +73,6 @@ const styles = StyleSheet.create({
         borderRadius: 14,
         width: '80%',
         height: '20%',
-
-
     },
     image1:{
         width: 43,

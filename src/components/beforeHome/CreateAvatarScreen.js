@@ -161,5 +161,5 @@ const styles = StyleSheet.create({
     color: '#310273', 
     fontSize: 30, 
     textAlign: 'center', 
-}
+  }
 });

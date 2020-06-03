@@ -42,90 +42,107 @@ export default class CardioExercise extends Component{
     componentWillUnmount() {
         clearInterval(this.state.locationTimer);
     }
-    // async componentDidMount(){
-    //     let {status} = await Location.requestPermissionsAsync();
-
-    //     if (status === "granted") {
-    //         this.state.locationTimer = setInterval(async () => {
-    //             let location = await Location.getCurrentPositionAsync({});
-    //             console.log(location);
-
-    //             this.setState({
-    //                 mapRegion: { 
-    //                     latitude: location.coords.latitude, 
-    //                     longitude: location.coords.longitude, 
-    //                     latitudeDelta: 0.0922, 
-    //                     longitudeDelta: 0.0421 
-    //                 },
-    //             });
-    //         }, 1000);
-    //     } 
-    // }
-
-    // componentWillUnmount() {
-    //     clearInterval(this.state.locationTimer);
-    // }
 
     render() {
         return (
-            <ScrollView>
-                <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                    <Text>{this.state.exercise}</Text>
-                    <MapView 
-                        region={this.state.mapRegion} 
-                        showsUserLocation={true}
-                        // userLocationUpdateInterval={1000}
-                        // userLocationFastestInterval={1000}
-                        style={styles.mapStyle}
-                    />
-                                      
-                    <TouchableOpacity style={styles.button} onPress={() => this.props.navigation.navigate('AfterReport')}>
-                        <Text>Finish</Text>
+            <View style={styles.container}>
+                <Text style={styles.title}>{this.state.exercise}</Text>
+                <MapView 
+                    region={this.state.mapRegion} 
+                    showsUserLocation={true}
+                    style={styles.mapStyle}
+                />
+                                    
+                <TouchableOpacity style={styles.button} onPress={() => this.props.navigation.navigate('AfterReport')}>
+                    <Text style={styles.nextButton}>Finish</Text>
+                </TouchableOpacity>
+                
+                <View style={styles.nav}>
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}>
+                        <Image source={require('../../icons/homeIcon.png')} style={styles.image1} />
                     </TouchableOpacity>
                     
-                    <View style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly'}}>
-                        <TouchableOpacity onPress={() => console.log('Click')}>
-                            <Image source={require('../../icons/homeIcon.png')} style={{width: 40, height: 40}} />
-                        </TouchableOpacity>
-                        
-                        <TouchableOpacity onPress={() => console.log('Click')}>
-                            <Image source={require('../../icons/eventsIcon.png')} style={{width: 40, height: 40}} />
-                        </TouchableOpacity>
-                        
-                        <TouchableOpacity onPress={() => console.log('Click')}>
-                            <Image source={require('../../icons/goalsIcon.png')} style={{width: 40, height: 40}} />
-                        </TouchableOpacity>
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Goals')}>
+                        <Image source={require('../../icons/goalsIcon.png')} style={styles.image2} />
+                    </TouchableOpacity>
 
-                        <TouchableOpacity onPress={() => console.log('Click')}>
-                            <Image source={require('../../icons/statsIcon.png')} style={{width: 40, height: 40}} />
-                        </TouchableOpacity>
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Stats')}>
+                        <Image source={require('../../icons/statsIcon.png')} style={styles.image3} />
+                    </TouchableOpacity>
 
-                        <TouchableOpacity onPress={() => console.log('Click')}>
-                            <Image source={require('../../icons/accountIcon.png')} style={{width: 40, height: 40}}/>
-                        </TouchableOpacity>
-                    </View>
-                
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Events')}>
+                        <Image source={require('../../icons/eventsIcon.png')} style={styles.image4} />
+                    </TouchableOpacity>
+
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Account')}>
+                        <Image source={require('../../icons/accountIcon.png')} style={styles.image5}/>
+                    </TouchableOpacity>
                 </View>
-            </ScrollView>
+            
+            </View>
         );
     }
 }
 
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      marginTop: 15,
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
     mapStyle: {
-        width: Dimensions.get('window').width,
-        height: 500,
+        width: 310,
+        height: 380,
+    },
+    container: {
+        flex: 1, 
+        alignItems: 'center', 
+        justifyContent: 'center',
+        backgroundColor: '#310273',
+        flexDirection: 'column',
+        paddingBottom: 60,
+        justifyContent: 'space-evenly'
     },
     button: {
         padding: 10,
         margin: 4,
-        backgroundColor: '#aaa',
-        borderRadius: 14
+        backgroundColor: '#A7F205',
+        borderRadius: 14,
+        height: '11%',
+        width: '40%',
+    },
+    image1:{
+        width: 43,
+        height: 40
+    },
+    image2:{
+        width: 41,
+        height: 40
+    },
+    image3:{
+        width: 60,
+        height: 40
+    },
+    image4:{
+        width: 38.3,
+        height: 40
+    },
+    image5:{
+        width: 39.6,
+        height: 40
+    },
+    nav:{
+        display: 'flex', 
+        flexDirection: 'row', 
+        justifyContent: 'space-evenly',
+        backgroundColor: '#ff6000',
+        position: 'absolute',
+        bottom: 0,
+        padding: 10,
+        width: '100%'
+    },
+    title:{
+        color: '#f2f2f2',
+        fontSize: 40
+    },
+    nextButton:{
+        color: '#310273', 
+        fontSize: 30, 
+        textAlign: 'center', 
     },
 });

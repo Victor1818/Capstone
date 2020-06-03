@@ -206,9 +206,7 @@ export default App = () => {
 const ScreenHeader = () =>{
   return(
     <View style={styles.header}>
-        <TouchableOpacity style={styles.logoContainer} >
-          <Image source={require('./src/icons/logo.png')} style={styles.logo}/>
-        </TouchableOpacity>
+      <Image source={require('./src/icons/logo.png')} style={styles.logo}/>
     </View>
   );
 }
